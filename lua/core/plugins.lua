@@ -13,36 +13,20 @@ local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
-  --use 'ellisonleao/gruvbox.nvim'
   use 'nvim-tree/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
   use 'nvim-treesitter/nvim-treesitter'
   use 'folke/tokyonight.nvim'
-
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-nvim-lsp' 
-  use 'L3MON4D3/LuaSnip'
-  use 'saadparwaiz1/cmp_luasnip'
-  use "rafamadriz/friendly-snippets"
-  use 'voldikss/vim-floaterm'
   use {
-	"windwp/nvim-autopairs",
-    config = function() require("nvim-autopairs").setup {} end
+    'nvim-telescope/telescope.nvim', tag = '0.1.8',
+    requires = { {'nvim-lua/plenary.nvim'} }
   }
-  use 'windwp/nvim-ts-autotag'
-
   use {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
   }
-  use {
-    'nvim-telescope/telescope.nvim',
-    tag = '0.1.0',
-    requires = {{'nvim-lua/plenary.nvim'}}
-  }
-  use 'mg979/vim-visual-multi'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
